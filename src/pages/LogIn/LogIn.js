@@ -5,6 +5,8 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LogIn = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -21,6 +23,7 @@ const LogIn = () => {
     }
 
     if (user) {
+        toast('Google SingIn successful')
         navigate(from, { replace: true })
     }
 
@@ -32,6 +35,7 @@ const LogIn = () => {
                 <img src={googleIcon} alt="" />
                 <span className='mx-4'>Google SignIn</span>
             </Button>
+            <ToastContainer />
         </div>
     );
 };
