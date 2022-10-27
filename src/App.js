@@ -7,13 +7,14 @@ import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
 import LogIn from './pages/LogIn/LogIn';
 import RequireAuth from './pages/LogIn/RequireAuth/RequireAuth';
-import FruitDelivery from './pages/ManageFruits/FruitDelivery/FruitDelivery';
-import ManageFruits from './pages/ManageFruits/ManageFruits';
+import FruitDelivery from './pages/UpdateFruits/FruitDelivery/FruitDelivery';
+import UpdateFruits from './pages/UpdateFruits/UpdateFruits';
 import MyFruits from './pages/MyFruits/MyFruits';
 import Profile from './pages/Profile/Profile';
 import Footer from './pages/Shared/Footer/Footer';
 import Header from './pages/Shared/Header/Header';
 import NotFoundPage from './pages/Shared/NotFoundPage/NotFoundPage';
+import ManageFruits from './pages/ManageFruits/ManageFruits';
 
 function App() {
   return (
@@ -22,14 +23,19 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/managefruits' element={
+          <Route path='/updatefruits' element={
             <RequireAuth>
-              <ManageFruits />
+              <UpdateFruits />
             </RequireAuth>
           } />
           <Route path='/fruits/:fruitId' element={
             <RequireAuth>
               <FruitDelivery />
+            </RequireAuth>
+          } />
+          <Route path='/managefruits' element={
+            <RequireAuth>
+              <ManageFruits />
             </RequireAuth>
           } />
           <Route path='/addfruits' element={<AddFruits />} />

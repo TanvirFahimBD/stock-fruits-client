@@ -24,7 +24,7 @@ const Fruits = () => {
                 </Row>
             </Container>
 
-            <Link to='/managefruits'><Button variant='primary' className='my-3'>See All fruits</Button></Link>
+            <Link to='/updatefruits'><Button variant='primary' className='my-3'>See All fruits</Button></Link>
 
         </div >
     );

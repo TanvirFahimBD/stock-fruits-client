@@ -20,9 +20,10 @@ const Header = () => {
                         <Nav className="me-auto">
                             {user &&
                                 <>
-                                    <Nav.Link as={Link} to='/managefruits' >Manage Fruits</Nav.Link>
-                                    <Nav.Link as={Link} to='/addfruits' >Add Fruits </Nav.Link>
-                                    <Nav.Link as={Link} to='/myfruits' >My Fruits </Nav.Link>
+                                    <Nav.Link as={Link} to='/updatefruits' >Stock</Nav.Link>
+                                    <Nav.Link as={Link} to='/managefruits' >Manage </Nav.Link>
+                                    <Nav.Link as={Link} to='/addfruits' >New </Nav.Link>
+                                    <Nav.Link as={Link} to='/myfruits' >My Choice </Nav.Link>
                                 </>
                             }
                             <Nav.Link as={Link} to='/blogs' >Blogs </Nav.Link>

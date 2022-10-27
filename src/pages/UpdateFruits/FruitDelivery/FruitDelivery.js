@@ -20,19 +20,8 @@ const FruitDelivery = () => {
         setAmount(selectedFruit?.quantity)
     }, [fruits])
 
-    //! handle stock
-    let currentAmount;
-    const handleStock = e => {
-        e.preventDefault()
-        //! amount of fruit state update
-        if (typeof addQuantity === 'number' && addQuantity > 0) {
-            currentAmount = amount + addQuantity;
-            setAmount(currentAmount)
-        }
-        else {
-            alert('Please Enter Number on stock amount input')
-        }
-
+    //! put api request
+    const getUpdateFruit = (currentAmount) => {
         const currentFruit = {
             itemName: fruit.itemName,
             image: fruit.image,
@@ -41,8 +30,8 @@ const FruitDelivery = () => {
             quantity: currentAmount,
             supplierName: fruit.supplierName
         }
+        console.log('currentFruit', currentFruit)
 
-        //! put api request
         fetch(`http://localhost:5000/fruit/${fruitId}`, {
             method: 'PUT',
             headers: {
@@ -58,9 +47,27 @@ const FruitDelivery = () => {
             })
     }
 
+    //! handle stock
+    let currentAmount;
+    const handleStock = e => {
+        e.preventDefault()
+        //! amount of fruit state update
+        if (typeof addQuantity === 'number' && addQuantity > 0) {
+            currentAmount = amount + addQuantity;
+            setAmount(currentAmount)
+        }
+        else {
+            alert('Please Enter Number on stock amount input')
+        }
+
+        getUpdateFruit(currentAmount)
+    }
+
     //! handle delivery
     const handleDeliver = () => {
-        setAmount(amount - 1)
+        currentAmount = amount - 1;
+        setAmount(currentAmount)
+        getUpdateFruit(currentAmount)
         toast('One Item delivered Successfully')
     }
 
