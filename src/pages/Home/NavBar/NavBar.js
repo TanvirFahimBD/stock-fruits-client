@@ -5,7 +5,6 @@ import banner2 from '../../../images/banner-images/banner2.jpg'
 import banner3 from '../../../images/banner-images/banner3.jpg'
 
 const NavBar = () => {
-
     return (
         <Carousel fade>
             <Carousel.Item>

@@ -1,16 +1,23 @@
 import React from 'react';
 import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
 
 const FruitsDetails = ({ fruit }) => {
     const { image, itemName, price, quantity, supplierName } = fruit;
 
     return (
-        <Col>
-            <img src={image} alt="" width={200} height={200} className='border rounded my-2' />
-            <h4>{itemName}</h4>
-            <p>Price: {price}</p>
-            <p>Quantity: {quantity}</p>
-            <h6>Supplier:{supplierName}</h6>
+        <Col sm={6} md={4} lg={3} className='my-4'>
+            <Card>
+                <Card.Img variant="top" src={image} height={200} />
+                <Card.Body>
+                    <Card.Title>{itemName}</Card.Title>
+                    <Card.Text>{price}</Card.Text>
+                    <Card.Text>{quantity}</Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                    <small className="text-muted">{supplierName}</small>
+                </Card.Footer>
+            </Card>
         </Col>
     );
 };

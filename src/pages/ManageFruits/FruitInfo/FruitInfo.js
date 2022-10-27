@@ -2,20 +2,27 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
 
 const FruitInfo = ({ fruit }) => {
     const { _id, description, image, itemName, price, quantity, supplierName } = fruit;
     return (
-        <Col>
-            <img src={image} alt="" width={200} height={200} className='border rounded my-2' />
-            <h4>{itemName}</h4>
-            <p>Price: {price}</p>
-            <p>Quantity: {quantity}</p>
-            <p>Supplier:{supplierName}</p>
-            <p>{`${description.slice(0, 50)}...`}</p>
-            <Link to={`/fruits/${_id}`}>
-                <Button>Update</Button>
-            </Link>
+        <Col sm={12} md={6} lg={4} className='my-4'>
+            <Card>
+                <Card.Img variant="top" src={image} height={200} />
+                <Card.Body>
+                    <Card.Title>{itemName}</Card.Title>
+                    <Card.Text>{price}</Card.Text>
+                    <Card.Text>{quantity}</Card.Text>
+                    <Card.Footer>
+                        <Card.Text>{`${description.slice(0, 50)}...`}</Card.Text>
+                        <small className="text-muted">{supplierName}</small>
+                    </Card.Footer>
+                    <Link to={`/fruits/${_id}`}>
+                        <Button className='my-2 w-100' >Update</Button>
+                    </Link>
+                </Card.Body>
+            </Card>
         </Col>
     );
 };
