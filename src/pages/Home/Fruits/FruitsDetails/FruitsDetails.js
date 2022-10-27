@@ -2,8 +2,7 @@ import React from 'react';
 import Col from 'react-bootstrap/Col';
 
 const FruitsDetails = ({ fruit }) => {
-    console.log("🚀 ~ file: FruitsDetails.js ~ line 5 ~ FruitsDetails ~ fruit", fruit)
-    const { description, image, itemName, price, quantity, supplierName } = fruit;
+    const { image, itemName, price, quantity, supplierName } = fruit;
 
     return (
         <Col>

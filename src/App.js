@@ -6,6 +6,7 @@ import Blogs from './pages/Blogs/Blogs';
 import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
 import LogIn from './pages/LogIn/LogIn';
+import FruitDelivery from './pages/ManageFruits/FruitDelivery/FruitDelivery';
 import ManageFruits from './pages/ManageFruits/ManageFruits';
 import MyFruits from './pages/MyFruits/MyFruits';
 import Profile from './pages/Profile/Profile';
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/managefruits' element={<ManageFruits />} />
+          <Route path='/fruits/:fruitId' element={<FruitDelivery />} />
           <Route path='/addfruits' element={<AddFruits />} />
           <Route path='/myfruits' element={<MyFruits />} />
           <Route path='/blogs' element={<Blogs />} />
