@@ -30,7 +30,6 @@ const FruitDelivery = () => {
             quantity: currentAmount,
             supplierName: fruit.supplierName
         }
-        console.log('currentFruit', currentFruit)
 
         fetch(`http://localhost:5000/fruit/${fruitId}`, {
             method: 'PUT',

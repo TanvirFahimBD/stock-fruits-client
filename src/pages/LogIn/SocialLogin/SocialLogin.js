@@ -23,11 +23,11 @@ const SocialLogin = () => {
     }
 
     return (
-        <div>
+        <div className='my-4'>
             {error && <p style={{ color: 'red' }}>{errorElement}</p>}
             <Button variant='white' className='border rounded' onClick={() => signInWithGoogle()}>
                 <img src={googleIcon} alt="" />
-                <span className='mx-4'>Google SignIn</span>
+                <span className='mx-4'> Google SignIn</span>
             </Button>
             <ToastContainer />
         </div>

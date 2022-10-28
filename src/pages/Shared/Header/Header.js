@@ -9,6 +9,7 @@ import { signOut } from 'firebase/auth';
 
 const Header = () => {
     const [user] = useAuthState(auth);
+    console.log("u", user)
 
     return (
         <div>
@@ -37,7 +38,7 @@ const Header = () => {
                             {user &&
                                 <>
                                     <Nav.Link as={Link} to='/profile'>
-                                        {user?.displayName ? user?.displayName : user?.email}
+                                        {user ? user?.displayName : user?.email}
                                     </Nav.Link>
                                     <Nav.Link as={Link} to='/' onClick={() => signOut(auth)}>
                                         Logout

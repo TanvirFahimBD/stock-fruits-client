@@ -10,11 +10,14 @@ import RequireAuth from './pages/LogIn/RequireAuth/RequireAuth';
 import FruitDelivery from './pages/UpdateFruits/FruitDelivery/FruitDelivery';
 import UpdateFruits from './pages/UpdateFruits/UpdateFruits';
 import MyFruits from './pages/MyFruits/MyFruits';
-import Profile from './pages/Profile/Profile';
 import Footer from './pages/Shared/Footer/Footer';
 import Header from './pages/Shared/Header/Header';
 import NotFoundPage from './pages/Shared/NotFoundPage/NotFoundPage';
 import ManageFruits from './pages/ManageFruits/ManageFruits';
+import Register from './pages/LogIn/Register/Register';
+import ForgetPassword from './pages/LogIn/ForgetPassword/ForgetPassword';
+import UpdateProfile from './pages/Profile/UpdateProfile/UpdateProfile';
+import Profile from './pages/Profile/Profile';
 
 function App() {
   return (
@@ -44,7 +47,10 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/updateprofile' element={<UpdateProfile />} />
           <Route path='/login' element={<LogIn />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/forgetpassword' element={<ForgetPassword />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </div>
