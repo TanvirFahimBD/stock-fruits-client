@@ -16,8 +16,8 @@ const Profile = () => {
 
     return (
         <div className='my-5'>
-            <img src={user?.photoURL} alt="" width={200} />
-            <h1>{user?.displayName}</h1>
+            <img src={user?.photoURL} alt="" width={200} height={200} style={{ borderRadius: '50%' }} />
+            <h3 className='my-3'>{user?.displayName}</h3>
             <p>Email: {user?.email}</p>
         </div>
     );

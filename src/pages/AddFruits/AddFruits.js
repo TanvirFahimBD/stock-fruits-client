@@ -3,8 +3,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const AddFruits = () => {
+    const [user] = useAuthState(auth);
     const [itemName, setItemName] = useState('')
     const [image, setImage] = useState('')
     const [description, setDescription] = useState('')
@@ -14,7 +17,8 @@ const AddFruits = () => {
 
     const handleAddNewItem = e => {
         e.preventDefault()
-        const newItem = { itemName, image, description, price, quantity, supplierName }
+        const email = user?.email;
+        const newItem = { email, itemName, image, description, price, quantity, supplierName }
 
         fetch('http://localhost:5000/fruit', {
             method: 'POST',
