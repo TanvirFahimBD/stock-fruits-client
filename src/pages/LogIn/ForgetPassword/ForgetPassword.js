@@ -1,11 +1,12 @@
-import { async } from '@firebase/util';
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useSendPasswordResetEmail, useUpdatePassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ForgetPassword = () => {
     const [email, setEmail] = useState('')
@@ -16,7 +17,7 @@ const ForgetPassword = () => {
         e.preventDefault()
         e.target.reset()
         await sendPasswordResetEmail(email);
-        alert('Sent email');
+        toast('Sent email');
     }
 
     if (sending) {
@@ -42,6 +43,7 @@ const ForgetPassword = () => {
             {error && <p className='text-danger'>{errorElement}</p>}
 
             <p className='my-2'> Go to <Link to='/login' style={{ textDecoration: 'none' }}  >LogIn Page </Link> </p>
+            <ToastContainer />
         </div>
     );
 };

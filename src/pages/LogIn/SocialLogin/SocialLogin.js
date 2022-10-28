@@ -3,12 +3,14 @@ import googleIcon from '../../../images/icon-images/google.png'
 import { Button } from 'react-bootstrap';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast, useToast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../../firebase.init';
+import useToken from '../../../hooks/useToken';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, error] = useSignInWithGoogle(auth);
+    const [token] = useToken(user);
     const location = useLocation();
     const navigate = useNavigate()
     const from = location?.state?.from?.pathname || '/';
@@ -17,7 +19,7 @@ const SocialLogin = () => {
         errorElement = error.message;
     }
 
-    if (user) {
+    if (token) {
         toast('Google SingIn successful')
         navigate(from, { replace: true })
     }

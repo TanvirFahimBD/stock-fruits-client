@@ -6,9 +6,9 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
+import useToken from '../../hooks/useToken';
 
-// TODO jwt 
-// TODO toast apply all login related
+// TODO jwt on register & social
 
 const LogIn = () => {
     const [email, setEmail] = useState('')
@@ -19,17 +19,18 @@ const LogIn = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [token] = useToken(user);
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state?.from?.pathname || '/';
 
-    const handleLogIn = e => {
+    const handleLogIn = async e => {
         e.preventDefault()
         e.target.reset()
-        signInWithEmailAndPassword(email, password)
+        await signInWithEmailAndPassword(email, password)
     }
 
-    if (user) {
+    if (token) {
         navigate(from, { replace: true })
     }
 

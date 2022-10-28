@@ -5,10 +5,10 @@ import Loading from '../../Shared/Loading/Loading';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-// TODO update profile name, photo
+
 
 const UpdateProfile = () => {
     const [displayName, setDisplayName] = useState('')
@@ -19,7 +19,7 @@ const UpdateProfile = () => {
     const handleProfileUpdate = async e => {
         e.preventDefault()
         await updateProfile({ displayName, photoURL });
-        alert('Updated profile');
+        toast('Updated profile');
     }
 
     if (loading || updating) {
@@ -47,6 +47,7 @@ const UpdateProfile = () => {
                     Update Profile
                 </Button>
             </Form>
+            <ToastContainer />
         </div>
     );
 };
