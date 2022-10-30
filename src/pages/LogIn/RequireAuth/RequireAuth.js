@@ -19,24 +19,24 @@ const RequireAuth = ({ children }) => {
         toast('Verify email sent. Verify now to get access');
     }
 
-    if (!user?.emailVerified) {
-        return (
-            <div>
-                <h1>Verify Your Email First</h1>
-                <p className='text-danger'> Your email not verified yet. Check Spam folder.</p>
-                <Button variant='success' onClick={handleVerifyEmail}>Resend Verify Email</Button>
-                <ToastContainer />
-            </div>
-        )
-    }
-
-
     if (loading || sending) {
         return <Loading />
     }
 
     if (!user) {
         return <Navigate to='/login' state={{ from: location }} replace />;
+    }
+
+
+    if (!user?.emailVerified) {
+        return (
+            <div>
+                <h1>Verify Your Email First</h1>
+                <p className='text-danger'> Your email not verified yet. Check Spam folder & reset this page.</p>
+                <Button variant='success' onClick={handleVerifyEmail}>Resend Verify Email</Button>
+                <ToastContainer />
+            </div>
+        )
     }
 
     return children;

@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
     return (
         <div>
-            <h1>About</h1>
+            <img src='https://i.ibb.co/MNGtK5z/About-us-page-cuate.png' alt="" style={{ maxHeight: '80vh' }} />
         </div>
     );
 };

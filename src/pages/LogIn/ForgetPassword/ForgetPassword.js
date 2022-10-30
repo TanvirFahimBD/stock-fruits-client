@@ -30,21 +30,26 @@ const ForgetPassword = () => {
     }
 
     return (
-        <div className='w-25 mx-auto'>
-            <Form className='my-3' onSubmit={handleResetPassword}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control type="email" placeholder="Enter email" required onBlur={(e) => setEmail(e.target.value)} />
-                </Form.Group>
-                <Button className='w-100' variant="primary" type="submit">
-                    Send Reset Password
-                </Button>
-            </Form>
+        <div className='d-flex'>
+            <div className='w-25 mx-auto mt-5'>
+                <Form className='my-3' onSubmit={handleResetPassword}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Control type="email" placeholder="Enter email" required onBlur={(e) => setEmail(e.target.value)} />
+                    </Form.Group>
+                    <Button className='w-100' variant="primary" type="submit">
+                        Send Reset Password
+                    </Button>
+                </Form>
 
-            {error && <p className='text-danger'>{errorElement}</p>}
+                {error && <p className='text-danger'>{errorElement}</p>}
 
-            <p className='my-2'> Go to <Link to='/login' style={{ textDecoration: 'none' }}  >LogIn Page </Link> </p>
-            <ToastContainer />
-        </div>
+                <p className='my-2'> Go to <Link to='/login' style={{ textDecoration: 'none' }}  >LogIn Page </Link> </p>
+                <ToastContainer />
+            </div>
+            <div className='border-start'>
+                <img src='https://i.ibb.co/tM5541R/Forgot-password-rafiki.png' alt="" style={{ maxHeight: '80vh' }} />
+            </div>
+        </div >
     );
 };
 

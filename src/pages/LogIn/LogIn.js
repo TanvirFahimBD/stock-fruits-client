@@ -8,8 +8,6 @@ import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 import useToken from '../../hooks/useToken';
 
-// TODO jwt on register & social
-
 const LogIn = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -44,26 +42,31 @@ const LogIn = () => {
     }
 
     return (
-        <div className='w-25 mx-auto'>
-            <Form className='my-3' onSubmit={handleLogIn}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control type="email" placeholder="Enter email" required onBlur={(e) => setEmail(e.target.value)} />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control type="password" placeholder="Password" required onBlur={(e) => setPassword(e.target.value)} />
-                </Form.Group>
-                <Button className='w-100' variant="primary" type="submit">
-                    Sign In
-                </Button>
-            </Form>
+        <div className='d-flex'>
+            <div className='border-end'>
+                <img src='https://i.ibb.co/cvJcp1S/Computer-login-bro.png' alt="" style={{ maxHeight: '80vh' }} />
+            </div>
+            <div className='w-25 mx-auto mt-5'>
+                <Form className='my-3' onSubmit={handleLogIn}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Control type="email" placeholder="Enter email" required onBlur={(e) => setEmail(e.target.value)} />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Control type="password" placeholder="Password" required onBlur={(e) => setPassword(e.target.value)} />
+                    </Form.Group>
+                    <Button className='w-100' variant="primary" type="submit">
+                        Sign In
+                    </Button>
+                </Form>
 
-            {error && <p className='text-danger'>{errorElement}</p>}
+                {error && <p className='text-danger'>{errorElement}</p>}
 
-            <SocialLogin />
+                <SocialLogin />
 
-            <p className='my-3'><Link to='/forgetpassword' style={{ textDecoration: 'none' }} >Forget Password?</Link> </p>
+                <p className='my-3'><Link to='/forgetpassword' style={{ textDecoration: 'none' }} >Forget Password?</Link> </p>
 
-            <p className='my-2'> Don't have an account? <Link to='/register' style={{ textDecoration: 'none' }}  >Sign Up For Free</Link> </p>
+                <p className='my-2'> Don't have an account? <Link to='/register' style={{ textDecoration: 'none' }}  >Sign Up For Free</Link> </p>
+            </div>
         </div>
     );
 };

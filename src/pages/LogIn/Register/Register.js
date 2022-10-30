@@ -11,7 +11,7 @@ import { ToastContainer, toast, useToast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useToken from '../../../hooks/useToken';
 
-// TODO check more remove all unused code
+// TODO check more remove all unused code part
 
 const Register = () => {
     const navigate = useNavigate()
@@ -61,27 +61,32 @@ const Register = () => {
     }
 
     return (
-        <div className='w-25 mx-auto'>
-            <Form className='my-3' onSubmit={handleRegister}>
-                <Form.Group className="mb-3" controlId="formBasicName">
-                    <Form.Control type="text" placeholder="Enter Full Name" required onBlur={(e) => setName(e.target.value)} />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control type="email" placeholder="Enter email" required onBlur={(e) => setEmail(e.target.value)} />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control type="password" placeholder="Password" required onBlur={(e) => setPassword(e.target.value)} />
-                </Form.Group><Form.Group className="mb-3" controlId="formBasicReTypePassword">
-                    <Form.Control type="password" placeholder="Re-Type Password" required onBlur={handleRetypePassword} />
-                </Form.Group>
-                <Button className='w-100' variant="primary" type="submit">
-                    Register
-                </Button>
-            </Form>
-            {errorElement}
-            <SocialLogin />
-            <p className='my-3'> Already have an account? <Link to='/login' style={{ textDecoration: 'none' }}  >LogIn Now</Link> </p>
-            <ToastContainer />
+        <div className='d-flex'>
+            <div className='w-25 mx-auto mt-5'>
+                <Form className='my-3' onSubmit={handleRegister}>
+                    <Form.Group className="mb-3" controlId="formBasicName">
+                        <Form.Control type="text" placeholder="Enter Full Name" required onBlur={(e) => setName(e.target.value)} />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Control type="email" placeholder="Enter email" required onBlur={(e) => setEmail(e.target.value)} />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Control type="password" placeholder="Password" required onBlur={(e) => setPassword(e.target.value)} />
+                    </Form.Group><Form.Group className="mb-3" controlId="formBasicReTypePassword">
+                        <Form.Control type="password" placeholder="Re-Type Password" required onBlur={handleRetypePassword} />
+                    </Form.Group>
+                    <Button className='w-100' variant="primary" type="submit">
+                        Register
+                    </Button>
+                </Form>
+                {errorElement}
+                <SocialLogin />
+                <p className='my-3'> Already have an account? <Link to='/login' style={{ textDecoration: 'none' }}  >LogIn Now</Link> </p>
+                <ToastContainer />
+            </div>
+            <div className='border-start'>
+                <img src='https://i.ibb.co/KNBWGk0/Sign-up-bro.png' alt="" style={{ maxHeight: '80vh' }} />
+            </div>
         </div>
     );
 };

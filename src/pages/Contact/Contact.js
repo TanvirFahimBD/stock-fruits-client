@@ -3,7 +3,7 @@ import React from 'react';
 const Contact = () => {
     return (
         <div>
-            <h1>Contact</h1>
+            <img src='https://i.ibb.co/Vtgc9sk/Contact-us-rafiki.png' alt="" style={{ maxHeight: '80vh' }} />
         </div>
     );
 };

@@ -17,11 +17,16 @@ const Profile = () => {
     }
 
     return (
-        <div>
-            <img src={user?.photoURL} alt="" width={150} height={150} style={{ borderRadius: '50%' }} />
-            <h3>Name: {user.displayName}</h3>
-            <p>Email: {user?.email}</p>
-            <Link to='/updateprofile'> <Button variant='primary'>Edit Profile</Button></Link>
+        <div className='d-flex'>
+            <div className='w-25 mx-auto mt-5'>
+                <img src={user?.photoURL} alt="" width={150} height={150} style={{ borderRadius: '50%' }} />
+                <h3>Name: {user.displayName}</h3>
+                <p>Email: {user?.email}</p>
+                <Link to='/updateprofile'> <Button variant='primary'>Edit Profile</Button></Link>
+            </div>
+            <div className='border-start'>
+                <img src='https://i.ibb.co/QJ3qjzT/Personal-data-bro.png' alt="" style={{ maxHeight: '80vh' }} />
+            </div>
         </div>
     );
 };
