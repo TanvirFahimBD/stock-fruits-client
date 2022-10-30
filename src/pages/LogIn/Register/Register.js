@@ -29,6 +29,16 @@ const Register = () => {
     const [sendEmailVerification, sending, errorEmailVerify] = useSendEmailVerification(auth);
     const [token] = useToken(user)
 
+    const handlePassword = (e) => {
+        const pass = e.target.value;
+        if (/(?=.[!@#$&])/.test(pass) && /(?=.[A-Z].[A-Z])/.test(pass)) {
+            setPassword(pass)
+        }
+        else {
+            toast('Enter at least 2 special letter, 4 uppercase')
+        }
+    }
+
     const handleRetypePassword = (e) => {
         const retypePass = e.target.value;
         if (retypePass === password) {
@@ -68,10 +78,10 @@ const Register = () => {
                         <Form.Control type="text" placeholder="Enter Full Name" required onBlur={(e) => setName(e.target.value)} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control type="email" placeholder="Enter email" required onBlur={(e) => setEmail(e.target.value)} />
+                        <Form.Control type="email" placeholder="Enter email" required onBlur={e => setEmail(e.target.value)} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Control type="password" placeholder="Password" required onBlur={(e) => setPassword(e.target.value)} />
+                        <Form.Control type="password" placeholder="Password" required onBlur={handlePassword} />
                     </Form.Group><Form.Group className="mb-3" controlId="formBasicReTypePassword">
                         <Form.Control type="password" placeholder="Re-Type Password" required onBlur={handleRetypePassword} />
                     </Form.Group>

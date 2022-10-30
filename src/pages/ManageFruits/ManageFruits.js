@@ -7,8 +7,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from 'react-bootstrap';
 
-// TODO pagination apply
-
 const ManageFruits = () => {
     const [fruits, setFruits] = useState([])
     const [size, setSize] = useState(10)

@@ -37,7 +37,11 @@ const Header = () => {
                             {user &&
                                 <>
                                     <Nav.Link as={Link} to='/profile'>
-                                        {user ? user?.displayName : user?.email}
+                                        {(user?.photoURL) ?
+                                            <img src={user?.photoURL} alt="" width={30} height={30} style={{ borderRadius: '50%' }} />
+                                            :
+                                            <span>{user?.displayName}</span>
+                                        }
                                     </Nav.Link>
                                     <Nav.Link as={Link} to='/' onClick={() => signOut(auth)}>
                                         Logout
