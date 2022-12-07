@@ -8,6 +8,8 @@
 
 <li>Users can create own profile account </li>
 <li>Users can find Can find fruits, fruits details</li>
+<li>Add new fruit item</li>
+<li>Delete food item</li>
 <li>Update food stock amount</li>
 <li>Confirm delivery</li>
 <li>Users can update own profile information</li>
