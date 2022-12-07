@@ -8,7 +8,7 @@ const useToken = (user) => {
         const getIdToken = async () => {
             const email = user?.user?.email;
             if (email) {
-                const { data } = await axios.post('http://localhost:5000/login', { email })
+                const { data } = await axios.post('https://stock-fruits-server.up.railway.app/login', { email })
                 setToken(data.accessToken)
                 localStorage.setItem('accessToken', data.accessToken)
             }

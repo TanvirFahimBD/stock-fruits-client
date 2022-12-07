@@ -31,7 +31,7 @@ const FruitDelivery = () => {
             supplierName: fruit.supplierName
         }
 
-        fetch(`http://localhost:5000/fruit/${fruitId}`, {
+        fetch(`https://stock-fruits-server.up.railway.app/fruit/${fruitId}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

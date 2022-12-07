@@ -4,7 +4,7 @@ const useFruits = (pageSize) => {
     const [fruits, setFruits] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/fruit')
+        fetch('https://stock-fruits-server.up.railway.app/fruit')
             .then(res => res.json())
             .then(data => {
                 setFruits(data)

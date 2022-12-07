@@ -20,7 +20,7 @@ const AddFruits = () => {
         const email = user?.email;
         const newItem = { email, itemName, image, description, price, quantity, supplierName }
 
-        fetch('http://localhost:5000/fruit', {
+        fetch('https://stock-fruits-server.up.railway.app/fruit', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

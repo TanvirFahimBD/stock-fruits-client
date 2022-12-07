@@ -15,7 +15,7 @@ const ManageFruits = () => {
 
     //! get total fruit amount
     useEffect(() => {
-        fetch('http://localhost:5000/fruitCount')
+        fetch('https://stock-fruits-server.up.railway.app/fruitCount')
             .then(res => res.json())
             .then(data => {
                 const count = data.count;
@@ -25,7 +25,7 @@ const ManageFruits = () => {
 
     //! get page & item numbers size based items
     useEffect(() => {
-        fetch(`http://localhost:5000/fruit?page=${page}&size=${size}`)
+        fetch(`https://stock-fruits-server.up.railway.app/fruit?page=${page}&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setFruits(data)
@@ -36,7 +36,7 @@ const ManageFruits = () => {
     const handleDelete = id => {
         const conf = window.confirm('Are you sure you want to delete?')
         if (conf) {
-            fetch(`http://localhost:5000/fruit/${id}`, {
+            fetch(`https://stock-fruits-server.up.railway.app/fruit/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

@@ -12,7 +12,7 @@ const UpdateFruits = () => {
     const [fruits, setFruits] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/fruit?size=${size}&page=${page}`)
+        fetch(`https://stock-fruits-server.up.railway.app/fruit?size=${size}&page=${page}`)
             .then(res => res.json())
             .then(data => {
                 setFruits(data)
@@ -20,7 +20,7 @@ const UpdateFruits = () => {
     }, [page, size])
 
     useEffect(() => {
-        fetch('http://localhost:5000/fruitCount')
+        fetch('https://stock-fruits-server.up.railway.app/fruitCount')
             .then(res => res.json())
             .then(data => {
                 const count = data.count;
