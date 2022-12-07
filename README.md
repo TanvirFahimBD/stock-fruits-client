@@ -29,7 +29,7 @@
 
 ---
 
-### Server Repo: https://github.com/TanvirFahimBD/sheccha-shebok-server
+### Server Repo: https://github.com/TanvirFahimBD/stock-fruits-server
 
 ---
 
