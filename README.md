@@ -1,16 +1,10 @@
-### Live Site: https://stock-fruits.web.app/
+## Website name: Stock Fruits
 
-### Live Server(API): https://stock-fruits-server.up.railway.app/
-
----
-
-### Server Repo: https://github.com/TanvirFahimBD/sheccha-shebok-server
+### Live Website: https://stock-fruits.web.app/
 
 ---
 
-# Site Name: Stock Fruits
-
-## Site Features:
+## Website Features:
 
 <li>Users can create own profile account </li>
 <li>Users can find Can find fruits, fruits details</li>
@@ -30,3 +24,11 @@
 <li>Express.js</li>
 <li>MongoDB</li>
 <li>Railway.app</li>
+
+---
+
+### Server Repo: https://github.com/TanvirFahimBD/sheccha-shebok-server
+
+---
+
+### Live Server(API): https://stock-fruits-server.up.railway.app/
