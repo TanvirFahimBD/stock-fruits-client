@@ -12,6 +12,7 @@ const NavBar = () => {
                     className="d-block w-100"
                     src={banner1}
                     alt="First slide"
+                    height="900"
                 />
             </Carousel.Item>
             <Carousel.Item>
@@ -19,6 +20,7 @@ const NavBar = () => {
                     className="d-block w-100"
                     src={banner2}
                     alt="Second slide"
+                    height="900"
                 />
             </Carousel.Item>
             <Carousel.Item>
@@ -26,6 +28,7 @@ const NavBar = () => {
                     className="d-block w-100"
                     src={banner3}
                     alt="Third slide"
+                    height="900"
                 />
             </Carousel.Item>
         </Carousel>

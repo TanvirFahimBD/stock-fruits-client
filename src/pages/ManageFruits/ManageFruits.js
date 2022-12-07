@@ -34,17 +34,21 @@ const ManageFruits = () => {
 
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/fruit/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    const remainingFruits = fruits.filter(fruit => fruit._id !== id)
-                    setFruits(remainingFruits)
-                    toast('Stock deleted Successfully')
-                }
+        const conf = window.confirm('Are you sure you want to delete?')
+        if (conf) {
+            fetch(`http://localhost:5000/fruit/${id}`, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        const remainingFruits = fruits.filter(fruit => fruit._id !== id)
+                        setFruits(remainingFruits)
+                        toast.success('Stock deleted Successfully')
+                    }
+                })
+        }
+
     }
 
     if (!fruits.length) {

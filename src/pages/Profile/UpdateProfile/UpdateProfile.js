@@ -36,6 +36,7 @@ const UpdateProfile = () => {
                 <img src='https://i.ibb.co/NZst4nw/Resume-folder-bro.png' alt="" style={{ maxHeight: '80vh' }} />
             </div>
             <div className=' w-25 mx-auto my-5'>
+                <h1 className='my-5'>Update Profile</h1>
                 <Form className='my-3' onSubmit={handleProfileUpdate}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Control type="email" placeholder="Enter email" required

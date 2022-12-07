@@ -20,8 +20,8 @@ const Profile = () => {
         <div className='d-flex'>
             <div className='w-25 mx-auto mt-5'>
                 <img src={user?.photoURL} alt="" width={150} height={150} style={{ borderRadius: '50%' }} />
-                <h3>Name: {user.displayName}</h3>
-                <p>Email: {user?.email}</p>
+                <h3 className='my-3'>Name: {user.displayName}</h3>
+                <p className='my-3'>Email: {user?.email}</p>
                 <Link to='/updateprofile'> <Button variant='primary'>Edit Profile</Button></Link>
             </div>
             <div className='border-start'>

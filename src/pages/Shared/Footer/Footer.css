@@ -1,0 +1,9 @@
+.list-style li{
+    list-style: none;
+    padding: 5px;
+}
+
+ul li{
+    color: blue;
+    cursor: pointer;
+}

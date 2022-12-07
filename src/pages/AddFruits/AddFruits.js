@@ -42,6 +42,7 @@ const AddFruits = () => {
                 <img src='https://i.ibb.co/kq7DYGF/Uploading-bro.png' alt="" style={{ maxHeight: '80vh' }} />
             </div>
             <div className='w-25 mx-auto'>
+                <h1 className='my-5'>Add New Fruit</h1>
                 <Form className='my-5' onSubmit={handleAddNewItem} >
                     <Form.Group className="mb-3" controlId="formBasicItemName">
                         <Form.Control type="text" placeholder="Fruit Name" required onBlur={(e) => setItemName(e.target.value)} />

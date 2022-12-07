@@ -10,7 +10,6 @@ import RequireAuth from './pages/LogIn/RequireAuth/RequireAuth';
 import FruitDelivery from './pages/UpdateFruits/FruitDelivery/FruitDelivery';
 import UpdateFruits from './pages/UpdateFruits/UpdateFruits';
 import MyFruits from './pages/MyFruits/MyFruits';
-import Footer from './pages/Shared/Footer/Footer';
 import Header from './pages/Shared/Header/Header';
 import NotFoundPage from './pages/Shared/NotFoundPage/NotFoundPage';
 import ManageFruits from './pages/ManageFruits/ManageFruits';
@@ -18,6 +17,7 @@ import Register from './pages/LogIn/Register/Register';
 import ForgetPassword from './pages/LogIn/ForgetPassword/ForgetPassword';
 import UpdateProfile from './pages/Profile/UpdateProfile/UpdateProfile';
 import Profile from './pages/Profile/Profile';
+import Footer from './pages/Shared/Footer/Footer';
 
 function App() {
   return (

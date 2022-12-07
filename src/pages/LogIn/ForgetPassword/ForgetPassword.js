@@ -32,6 +32,7 @@ const ForgetPassword = () => {
     return (
         <div className='d-flex'>
             <div className='w-25 mx-auto mt-5'>
+                <h1 className='my-5'>Forget Password</h1>
                 <Form className='my-3' onSubmit={handleResetPassword}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Control type="email" placeholder="Enter email" required onBlur={(e) => setEmail(e.target.value)} />

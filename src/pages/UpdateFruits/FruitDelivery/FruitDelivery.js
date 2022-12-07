@@ -18,7 +18,7 @@ const FruitDelivery = () => {
         const selectedFruit = fruits.find(fruit => fruit._id === fruitId)
         setFruit(selectedFruit)
         setAmount(selectedFruit?.quantity)
-    }, [fruits])
+    }, [fruits, fruitId])
 
     //! put api request
     const getUpdateFruit = (currentAmount) => {
@@ -41,7 +41,7 @@ const FruitDelivery = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
-                    toast('Stock Amount updated Successfully')
+                    toast.success('Stock Amount updated Successfully')
                 }
             })
     }
@@ -60,6 +60,7 @@ const FruitDelivery = () => {
         }
 
         getUpdateFruit(currentAmount)
+        e.target.reset()
     }
 
     //! handle delivery
@@ -67,7 +68,7 @@ const FruitDelivery = () => {
         currentAmount = amount - 1;
         setAmount(currentAmount)
         getUpdateFruit(currentAmount)
-        toast('One Item delivered Successfully')
+        toast.success('One Item delivered Successfully')
     }
 
     if (!fruit?._id) {
@@ -83,7 +84,7 @@ const FruitDelivery = () => {
                 <p>Price: {fruit?.price}</p>
                 <p>Quantity: {amount}</p>
                 <p>Supplier: {fruit?.supplierName}</p>
-                <p>{fruit?.description}</p>
+                <p className='w-50' style={{ marginLeft: '220px' }}>{fruit?.description}</p>
                 <Button variant='primary' onClick={handleDeliver} >Delivered</Button>
             </div>
             {/* stock update part  */}

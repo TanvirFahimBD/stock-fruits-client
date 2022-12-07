@@ -47,6 +47,7 @@ const LogIn = () => {
                 <img src='https://i.ibb.co/cvJcp1S/Computer-login-bro.png' alt="" style={{ maxHeight: '80vh' }} />
             </div>
             <div className='w-25 mx-auto mt-5'>
+                <h1 className='my-5'>Log In</h1>
                 <Form className='my-3' onSubmit={handleLogIn}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Control type="email" placeholder="Enter email" required onBlur={(e) => setEmail(e.target.value)} />

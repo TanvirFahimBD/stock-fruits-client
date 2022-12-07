@@ -73,6 +73,7 @@ const Register = () => {
     return (
         <div className='d-flex'>
             <div className='w-25 mx-auto mt-5'>
+                <h1 className='my-5'>Register</h1>
                 <Form className='my-3' onSubmit={handleRegister}>
                     <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Control type="text" placeholder="Enter Full Name" required onBlur={(e) => setName(e.target.value)} />
